@@ -15,3 +15,9 @@ To begin our new project, let's setup a virtual machine, using Vagrant and Larav
 There are a number of dependencies that we'll need to pull in for this project. While even a few years ago, this might have been a pain, luckily that's no longer the case, thanks to Composer.
 
 **Please note: The only dependency I pulled in is Jeffrey’s Generators, for the rest I decided to use Laravel 5.1 built-in features.**
+
+### 3. [Database Configuration and Sequel Pro](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/3)
+
+In this lesson, let's get connected to our database, and then figure out how to access it from a GUI, like Sequel Pro.
+
+**Please note: The only thing I had to do was to edit `.env` file. It is not committed, of course.**
