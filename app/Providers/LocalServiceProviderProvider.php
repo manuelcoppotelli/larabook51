@@ -14,7 +14,7 @@ class LocalServiceProviderProvider extends ServiceProvider
      * @var array
      */
     protected $providers = [
-
+        'Laracasts\Generators\GeneratorsServiceProvider',
     ];
 
     /**
