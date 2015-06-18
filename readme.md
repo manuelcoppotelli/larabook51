@@ -31,3 +31,9 @@ Although we won't focus too much on design, naturally, we need something nice an
 This includes some basic design boilerplate work. Let's focus on the navbar and homepage in this episode.
 
 **Please note: I used `.scss` instead of `.sass` stylesheet file.**
+
+### 6. [Gulp, Sass and Autoprefixing](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/6)
+
+Let's put a system into place, that will automatically watch our Sass files for changes, compile them, and then autoprefix any relevant CSS3. We'll use the excellent Gulp tool to allow for this.
+
+**Please note: I've only edited `gulpfile.js`. All done with elixir.**
