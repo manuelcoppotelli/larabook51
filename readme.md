@@ -37,3 +37,9 @@ This includes some basic design boilerplate work. Let's focus on the navbar and 
 Let's put a system into place, that will automatically watch our Sass files for changes, compile them, and then autoprefix any relevant CSS3. We'll use the excellent Gulp tool to allow for this.
 
 **Please note: I've only edited `gulpfile.js`. All done with elixir.**
+
+### 7. [Registration with BDD](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/7)
+
+Naturally, before a user can begin posting status updates, they first need to register for Larabook. Let's use Codeception to help drive and test this process.
+
+**Please note: I've used Laravel built-in authentication. I pulled `laravelcollective/html` and used forms from Laravel 5.0.**
