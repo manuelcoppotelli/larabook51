@@ -13,7 +13,7 @@ class SignUpTest extends TestCase
      */
     public function testSignUpForALarabookAccount()
     {
-        //this->asGuest();
+        $this->asGuest();
 
         $this->visit('/')
              ->click('Sign Up!')
@@ -28,5 +28,21 @@ class SignUpTest extends TestCase
 
         $this->seePageIs('/')
              ->see('Welcome to Larabook');
+
+        $this->seeInDatabase('users', [
+            'name' => 'John Doe',
+            'email' => 'johndoe@example.com'
+        ]);
+    }
+
+
+    /**
+     * Check if the user is not authenticated.
+     * @return $this
+     */
+    private function asGuest()
+    {
+        $this->assertFalse(Auth::check());
+        return $this;
     }
 }

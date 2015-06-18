@@ -4,3 +4,4 @@
 /logs
 .env
 _ide_helper.php
+.phpstorm.meta.php
