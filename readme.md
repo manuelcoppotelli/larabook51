@@ -25,3 +25,9 @@ In this lesson, let's get connected to our database, and then figure out how to 
 ### 4. [The Master Page](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/4)
 
 Although we won't focus too much on design, naturally, we need something nice and simple to look at. So, let's begin that process by leveraging Twitter Bootstrap, and setting up our first master/layout page.
+
+### 5. [Designing the Home Page](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/5)
+
+This includes some basic design boilerplate work. Let's focus on the navbar and homepage in this episode.
+
+**Please note: I used `.scss` instead of `.sass` stylesheet file.**
