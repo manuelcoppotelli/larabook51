@@ -21,3 +21,7 @@ There are a number of dependencies that we'll need to pull in for this project. 
 In this lesson, let's get connected to our database, and then figure out how to access it from a GUI, like Sequel Pro.
 
 **Please note: The only thing I had to do was to edit `.env` file. It is not committed, of course.**
+
+### 4. [The Master Page](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/4)
+
+Although we won't focus too much on design, naturally, we need something nice and simple to look at. So, let's begin that process by leveraging Twitter Bootstrap, and setting up our first master/layout page.
