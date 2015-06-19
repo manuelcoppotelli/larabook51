@@ -43,3 +43,9 @@ Let's put a system into place, that will automatically watch our Sass files for 
 Naturally, before a user can begin posting status updates, they first need to register for Larabook. Let's use Codeception to help drive and test this process.
 
 **Please note: I've used Laravel built-in authentication. I pulled `laravelcollective/html` and used forms from Laravel 5.0.**
+
+### 8. [Users](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/8)
+
+In the previous lesson, we stopped just short of creating a migration for our users. Let's tackle that now, and return the tests to green.
+
+**Please note: I've decided to keep `name` field instead of `username`. All the work was already done in Auth Controller.**

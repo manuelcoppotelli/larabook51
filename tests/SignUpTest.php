@@ -22,8 +22,8 @@ class SignUpTest extends TestCase
         $this->submitForm([
             'name' => 'John Doe',
             'email' => 'johndoe@example.com',
-            'password' => 'demo',
-            'password_confirmation' => 'demo'
+            'password' => 'secret',
+            'password_confirmation' => 'secret'
         ]);
 
         $this->seePageIs('/')
@@ -33,6 +33,8 @@ class SignUpTest extends TestCase
             'name' => 'John Doe',
             'email' => 'johndoe@example.com'
         ]);
+
+        $this->assertTrue(Auth::check());
     }
 
 
