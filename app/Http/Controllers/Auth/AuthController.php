@@ -59,6 +59,8 @@ class AuthController extends Controller
 
         Auth::login($user);
 
+        flash()->overlay('Glad to have you as a new Larabook member!');
+
         return redirect($this->redirectPath());
     }
 }
