@@ -6,8 +6,8 @@ use Larabook\User;
 use Larabook\Jobs\RegisterUserJob;
 use Illuminate\Support\Facades\Auth;
 use Larabook\Http\Controllers\Controller;
+use Larabook\Http\Requests\SignInRequest;
 use Larabook\Http\Requests\RegistrationRequest;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class AuthController extends Controller
 {
@@ -22,10 +22,6 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
-
-    protected $redirectTo = '/';
-
     /**
      * Create a new authentication controller instance.
      *
@@ -33,6 +29,48 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'getLogout']);
+    }
+
+    /**
+     * Show the application login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getLogin()
+    {
+        return view('auth.login');
+    }
+
+    /**
+     * Handle a login request to the application.
+     *
+     * @param SignInRequest $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postLogin(SignInRequest $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials, $request->has('remember'))) {
+            flash()->success('Welcome back!');
+            return redirect()->intended(route('statuses'));
+        }
+
+        flash()->error('Invalid credentials');
+
+        return redirect()->route('login_path');
+    }
+
+    /**
+     * Log the user out of the application.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getLogout()
+    {
+        Auth::logout();
+
+        return redirect()->route('home');
     }
 
     /**
@@ -61,6 +99,6 @@ class AuthController extends Controller
 
         flash()->overlay('Glad to have you as a new Larabook member!');
 
-        return redirect($this->redirectPath());
+        return redirect()->route('home');
     }
 }

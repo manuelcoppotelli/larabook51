@@ -54,7 +54,7 @@ In the previous lesson, we stopped just short of creating a migration for our us
 
 Of course, form validation is essential for any web app. Larabook is no different; so let's work on that in this episode.
 
-**Please note: I've built-in Form Request and switched to `AuthenticatesUsers` trait instead of `AuthenticatesAndRegistersUsers`.**
+**Please note: I've used built-in Form Request and switched to `AuthenticatesUsers` trait instead of `AuthenticatesAndRegistersUsers`.**
 
 ### 10. [Thinking in Terms of Commands](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/10)
 
@@ -77,3 +77,9 @@ How many times have you created the necessary views to display flash messages? L
 Right now, we can register a user; however, we still need to provide more feedback to signal that they are, in fact, logged in. Let's focus on that in this episode, along with a few other tidbits.
 
 **Please note: Most of the work already done by the `Authenticate` Middelware. Little workaround in `Larabook\Providers\AppServiceProvider`.**
+
+### 14. [Signing In](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/14)
+
+Now that a user can successfully register, we next need to give them a way to login and logout!
+
+**Please note: I've decided not to use `AuthenticatesUsers` trait because of `SignInRequest` Form Request.**

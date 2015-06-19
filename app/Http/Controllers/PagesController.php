@@ -2,11 +2,6 @@
 
 namespace Larabook\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use Larabook\Http\Requests;
-use Larabook\Http\Controllers\Controller;
-
 class PagesController extends Controller
 {
     /**
