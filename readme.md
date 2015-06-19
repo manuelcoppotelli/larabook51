@@ -49,3 +49,9 @@ Naturally, before a user can begin posting status updates, they first need to re
 In the previous lesson, we stopped just short of creating a migration for our users. Let's tackle that now, and return the tests to green.
 
 **Please note: I've decided to keep `name` field instead of `username`. All the work was already done in Auth Controller.**
+
+### 9. [Registration Validation](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/9)
+
+Of course, form validation is essential for any web app. Larabook is no different; so let's work on that in this episode.
+
+**Please note: I've built-in Form Request and switched to `AuthenticatesUsers` trait instead of `AuthenticatesAndRegistersUsers`.**

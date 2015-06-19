@@ -3,9 +3,10 @@
 namespace Larabook\Http\Controllers\Auth;
 
 use Larabook\User;
-use Validator;
+use Illuminate\Support\Facades\Auth;
 use Larabook\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Larabook\Http\Requests\RegistrationRequest;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class AuthController extends Controller
 {
@@ -20,14 +21,13 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers;
+    use AuthenticatesUsers;
 
     protected $redirectTo = '/';
 
     /**
      * Create a new authentication controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
@@ -35,18 +35,26 @@ class AuthController extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     * Show the application registration form.
      *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @return \Illuminate\Http\Response
      */
-    protected function validator(array $data)
+    public function getRegister()
     {
-        return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|confirmed|min:6',
-        ]);
+        return view('auth.register');
+    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param RegistrationRequest $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postRegister(RegistrationRequest $request)
+    {
+        Auth::login($this->create($request->all()));
+
+        return redirect($this->redirectPath());
     }
 
     /**
