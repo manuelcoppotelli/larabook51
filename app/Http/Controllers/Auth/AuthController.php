@@ -3,6 +3,7 @@
 namespace Larabook\Http\Controllers\Auth;
 
 use Larabook\User;
+use Larabook\Jobs\RegisterUserJob;
 use Illuminate\Support\Facades\Auth;
 use Larabook\Http\Controllers\Controller;
 use Larabook\Http\Requests\RegistrationRequest;
@@ -52,23 +53,12 @@ class AuthController extends Controller
      */
     public function postRegister(RegistrationRequest $request)
     {
-        Auth::login($this->create($request->all()));
+        extract($request->only('name', 'email', 'password'));
+
+        $user = $this->dispatch(new RegisterUserJob($name, $email, $password));
+
+        Auth::login($user);
 
         return redirect($this->redirectPath());
-    }
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
     }
 }

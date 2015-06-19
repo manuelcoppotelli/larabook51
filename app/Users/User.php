@@ -1,6 +1,6 @@
 <?php
 
-namespace Larabook;
+namespace Larabook\Users;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -32,4 +32,33 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+
+    /**
+     * Password must always be hashed.
+     *
+     * @param $password
+     */
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
+
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param $name
+     * @param $email
+     * @param $password
+     *
+     * @return User
+     */
+    public static function register($name, $email, $password)
+    {
+        $user = new static(compact('name', 'email', 'password'));
+
+        //Raise an event
+
+        return $user;
+    }
 }

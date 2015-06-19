@@ -3,7 +3,6 @@
 namespace Larabook\Http\Requests;
 
 use Illuminate\Support\Facades\Auth;
-use Larabook\Http\Requests\Request;
 
 class RegistrationRequest extends Request
 {

@@ -19,8 +19,8 @@ Route::post('/login', 'Auth\AuthController@postLogin');
 Route::get('/logout', ['as' => 'logout_path', 'uses' => 'Auth\AuthController@getLogin']);
 
 // Registration routes...
-Route::get('/register', 'Auth\AuthController@getRegister');
-Route::post('/register', ['as' => 'register_path', 'uses' => 'Auth\AuthController@postRegister']);
+Route::get('/register', ['as' => 'register_path', 'uses' => 'Auth\AuthController@getRegister']);
+Route::post('/register', 'Auth\AuthController@postRegister');
 
 // Password reset link request routes...
 Route::get('password/email', ['as' => 'password_reset', 'uses' => 'Auth\PasswordController@getEmail']);

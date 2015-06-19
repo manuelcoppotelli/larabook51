@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => Larabook\User::class,
+    'model' => Larabook\Users\User::class,
 
     /*
     |--------------------------------------------------------------------------

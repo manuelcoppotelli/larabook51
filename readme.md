@@ -55,3 +55,9 @@ In the previous lesson, we stopped just short of creating a migration for our us
 Of course, form validation is essential for any web app. Larabook is no different; so let's work on that in this episode.
 
 **Please note: I've built-in Form Request and switched to `AuthenticatesUsers` trait instead of `AuthenticatesAndRegistersUsers`.**
+
+### 10. [Thinking in Terms of Commands](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/10)
+
+For larger applications that need to be maintained for years, it makes sense to take a step back, and think about architecture. Let's use commands to describe the various instructions that our app offers, as well as a command bus to manage the act of translating these commands into handler classes.
+
+**Please note: I've used built-in Jobs.**
