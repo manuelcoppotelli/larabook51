@@ -3,6 +3,7 @@
 namespace Larabook\Jobs;
 
 use Larabook\Users\User;
+use Larabook\Events\UserRegistred;
 use Larabook\Users\UserRepository;
 use Illuminate\Contracts\Bus\SelfHandling;
 
@@ -37,6 +38,8 @@ class RegisterUserJob extends Job implements SelfHandling
         $user = User::register($this->name, $this->email, $this->password);
 
         $repository->save($user);
+
+        event(new UserRegistred($user));
 
         return $user;
     }

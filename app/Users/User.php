@@ -55,10 +55,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public static function register($name, $email, $password)
     {
-        $user = new static(compact('name', 'email', 'password'));
-
-        //Raise an event
-
-        return $user;
+        return new static(compact('name', 'email', 'password'));
     }
 }

@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'Larabook\Events\SomeEvent' => [
-            'Larabook\Listeners\EventListener',
+        Larabook\Events\UserRegistres::class => [
+            Larabook\Listeners\SendNotificationEmail::class,
         ],
     ];
 
