@@ -71,3 +71,9 @@ Because we've taken some time to structure our app in this manner, we now have a
 ### 12. [Super Easy Flash Messaging](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/12)
 
 How many times have you created the necessary views to display flash messages? Lots? Well, in this episode, I'll show you how we can tackle this very quickly.
+
+### 13. [Feedback and Filters](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/13)
+
+Right now, we can register a user; however, we still need to provide more feedback to signal that they are, in fact, logged in. Let's focus on that in this episode, along with a few other tidbits.
+
+**Please note: Most of the work already done by the `Authenticate` Middelware. Little workaround in `Larabook\Providers\AppServiceProvider`.**
