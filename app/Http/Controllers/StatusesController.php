@@ -2,7 +2,12 @@
 
 namespace Larabook\Http\Controllers;
 
-class StatusController extends Controller
+use Illuminate\Support\Facades\Auth;
+use Larabook\Http\Requests\PublishStatusRequest;
+use Larabook\Jobs\PublishStatusJob;
+use Larabook\Statuses\StatusRepository;
+
+class StatusesController extends Controller
 {
     /**
      * Create a new statuses controller instance.
@@ -14,13 +19,16 @@ class StatusController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display the statuses.
      *
+     * @param StatusRepository $repository
      * @return Response
      */
-    public function index()
+    public function index(StatusRepository $repository)
     {
-        return view('statuses.index');
+        $statuses = $repository->getAllForUser(Auth::user());
+
+        return view('statuses.index', compact('statuses'));
     }
 
     /**
@@ -34,13 +42,18 @@ class StatusController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created status.
      *
+     * @param PublishStatusRequest $request
      * @return Response
      */
-    public function store()
+    public function store(PublishStatusRequest $request)
     {
-        //
+        $this->dispatch(new PublishStatusJob($request->get('body'), Auth::user()->id));
+
+        flash()->message('Your status has been updated!');
+
+        return redirect()->refresh();
     }
 
     /**

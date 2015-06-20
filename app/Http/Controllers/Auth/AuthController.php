@@ -53,7 +53,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials, $request->has('remember'))) {
             flash()->success('Welcome back!');
-            return redirect()->intended(route('statuses'));
+            return redirect()->intended(route('statuses_path'));
         }
 
         flash()->error('Invalid credentials');

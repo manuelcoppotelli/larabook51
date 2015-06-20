@@ -1,7 +1,5 @@
 <?php
 
-use Larabook\Users\User;
-
 class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
     /**
@@ -37,17 +35,10 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
         return $app;
     }
 
-    /**
-     * Check if the user is not authenticated.
-     *
-     * @param null $data
-     * @return $this
-     */
-    private function haveAnAccount($data = null)
+    public function postAStatus($body)
     {
-        if ($data == null)
-            $data = $this->user;
-        $this->assertNotNull(User::create($data));
+        $this->type($body, 'body')
+            ->press('Post Status');
 
         return $this;
     }
@@ -55,22 +46,20 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
     /**
      * Sign In.
      *
-     * @param null $data
+     * @param array $data
      * @return $this
      */
-    public function signIn($data = null)
+    public function signIn($data = [])
     {
-        if ($data == null)
+        if ($data === [])
             $data = $this->user;
 
         $this->haveAnAccount($data);
 
         $this->visit('/login')
-            ->see('Login');
-
-        $this->type($data['email'], 'email')
-            ->type($data['password'], 'password')
-            ->press('Login');
+             ->type($data['email'], 'email')
+             ->type($data['password'], 'password')
+             ->press('Login');
 
         return $this;
     }
@@ -82,6 +71,31 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
     public function asGuest()
     {
         $this->assertFalse(Auth::check());
+        return $this;
+    }
+
+    /**
+     * Create an account
+     *
+     * @param array $override
+     * @return $this
+     */
+    public function haveAnAccount($override = [])
+    {
+        $this->have('Larabook\Users\User', $override);
+        return $this;
+    }
+
+    /**
+     * Create a new instance of a model
+     *
+     * @param $model
+     * @param array $overrides
+     * @return mixed
+     */
+    public function have($model, $overrides = [])
+    {
+        factory($model)->create($overrides);
         return $this;
     }
 }

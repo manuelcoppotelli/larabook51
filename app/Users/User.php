@@ -45,6 +45,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
+     * A user has many statuses.
+     */
+    public function statuses()
+    {
+        return $this->hasMany('Larabook\Statuses\Status');
+    }
+
+    /**
      * Create a new user instance after a valid registration.
      *
      * @param $name

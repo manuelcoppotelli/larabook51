@@ -31,4 +31,5 @@ Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', ['as' => 'register_reset', 'uses' => 'Auth\PasswordController@postReset']);
 
 // Statuses
-Route::get('/statuses', ['as' => 'statuses', 'uses' => 'StatusController@index']);
+Route::get('/statuses', ['as' => 'statuses_path', 'uses' => 'StatusesController@index']);
+Route::post('/statuses', 'StatusesController@store');

@@ -19,3 +19,10 @@ $factory->define(Larabook\Users\User::class, function ($faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(Larabook\Statuses\Status::class, function ($faker) {
+    return [
+        'body' => $faker->sentence,
+        'user_id' => factory('Larabook\Users\User')->create()->id,
+    ];
+});

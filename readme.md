@@ -89,3 +89,7 @@ Now that a user can successfully register, we next need to give them a way to lo
 If you're working along, you might have encountered a confusing Codeception bug. Don't worry: as they say, it's Codeception, not you. Let's take a look.
 
 **Please note: I've only refactored the test files a bit.**
+
+### 16. [Publishing Statuses](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/16)
+
+It's time to allow our authenticated users to publish statuses to their profile. We have a number of things to do in this episode, so grab a cup of coffee, and let's do this.
