@@ -38,15 +38,4 @@ class SignUpTest extends TestCase
 
         $this->assertTrue(Auth::check());
     }
-
-
-    /**
-     * Check if the user is not authenticated.
-     * @return $this
-     */
-    private function asGuest()
-    {
-        $this->assertFalse(Auth::check());
-        return $this;
-    }
 }
