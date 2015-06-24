@@ -3,15 +3,25 @@
 namespace Larabook\Statuses;
 
 use Illuminate\Database\Eloquent\Model;
+use Laracasts\Presenter\PresentableTrait;
 
 class Status extends Model
 {
+    use PresentableTrait;
+
     /**
      * The database table used by the model.
      *
      * @var string
      */
     protected $table = 'statuses';
+
+    /**
+     * Path to the presenter for a status.
+     *
+     * @var string
+     */
+    protected $presenter = 'Larabook\Statuses\StatusPresenter';
 
     /**
      * The attributes that are mass assignable.

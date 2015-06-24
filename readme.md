@@ -101,3 +101,7 @@ So far, we've exclusively created functional tests. However, often, it can be be
 ### 18. [Gravatars and View Presenters](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/18)
 
 At least for now, rather than making Larabook users upload profile images, we'll simply leverage the popular Gravatar service. Along the way, I'll show you three different ways to "store" this logic for fetching the appropriate Gravatar.
+
+### 19. [Designing Statuses](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/19)
+
+Right now, the status page looks terrible. I know we're interested in the code, but let's take at least ten minutes to make it look prettier.
