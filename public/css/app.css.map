@@ -1,1 +1,1 @@
-{"version":3,"sources":["main.scss"],"names":[],"mappings":"AAAA;EACE,mBAAkB,EADd","file":"app.css","sourcesContent":["body {\n  padding-top: 70px;\n}\n"],"sourceRoot":"/source/"}
+{"version":3,"sources":["main.scss"],"names":[],"mappings":"AAAA;EACE,mBAAkB,EADd;;AAIN;EACE,aAAY;EACZ,oBAAmB;EACnB,WAAU;EACV,YAAW;EACX,wBAAuB,EALV","file":"app.css","sourcesContent":["body {\n  padding-top: 70px;\n}\n\n.nav-gravatar {\n  float: left;\n  position: relative;\n  top: -6px;\n  left: -8px;\n  border: 1px solid #555;\n}"],"sourceRoot":"/source/"}
