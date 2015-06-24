@@ -4,13 +4,14 @@ namespace Larabook\Users;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Laracasts\Presenter\PresentableTrait;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract
 {
-    use Authenticatable, CanResetPassword;
+    use Authenticatable, CanResetPassword, PresentableTrait;
 
     /**
      * The database table used by the model.
@@ -18,6 +19,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @var string
      */
     protected $table = 'users';
+
+    /**
+     * Path to the presenter for a user.
+     *
+     * @var string
+     */
+    protected $presenter = 'Larabook\Users\UserPresenter';
 
     /**
      * The attributes that are mass assignable.

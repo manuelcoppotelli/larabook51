@@ -23,6 +23,6 @@ $factory->define(Larabook\Users\User::class, function ($faker) {
 $factory->define(Larabook\Statuses\Status::class, function ($faker) {
     return [
         'body' => $faker->sentence,
-        'user_id' => factory('Larabook\Users\User')->create()->id,
+        'user_id' => Larabook\Users\User::all()->random()->id,
     ];
 });

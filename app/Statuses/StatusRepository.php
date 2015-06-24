@@ -1,9 +1,9 @@
 <?php
 
-
 namespace Larabook\Statuses;
 
 use Larabook\Users\User;
+use Larabook\Statuses\Status;
 
 class StatusRepository
 {

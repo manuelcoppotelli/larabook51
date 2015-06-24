@@ -5,7 +5,7 @@
 
     @include('errors.list')
 
-    {!! Form::open() !!}
+    {!! Form::open(['role' => 'form', 'class' => 'form-horizontal']) !!}
     <div class="form-group">
         {!! Form::label('body', 'Status') !!}
         {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
