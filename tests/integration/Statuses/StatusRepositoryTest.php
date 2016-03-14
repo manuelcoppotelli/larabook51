@@ -1,5 +1,6 @@
 <?php
 
+use Larabook\Statuses\Status;
 use Larabook\Statuses\StatusRepository;
 
 class StatusRepositoryTest extends TestCase
@@ -8,10 +9,13 @@ class StatusRepositoryTest extends TestCase
 
     protected $repo;
 
-    public function testGetsAllStatusesForAUser()
+    function __construct()
     {
         $this->repo = new StatusRepository();
+    }
 
+    public function testGetsAllStatusesForAUser()
+    {
         $users = factory('Larabook\Users\User', 2)->create();
 
         factory('Larabook\Statuses\Status', 2)->create([
@@ -29,5 +33,19 @@ class StatusRepositoryTest extends TestCase
         $this->assertCount(2, $statusForUser);
         $this->assertEquals('My status', $statusForUser[0]->body);
         $this->assertEquals('My status', $statusForUser[1]->body);
+    }
+
+    public function testItSavesAStatusForAUser()
+    {
+        $status = Status::create(['body' => 'Another status']);
+
+        $user = factory('Larabook\Users\User')->create();
+
+        $this->repo->save($status, $user->id);
+
+        $this->seeInDatabase('statuses', [
+            'body' => 'Another status',
+            'user_id' => $user->id
+        ]);
     }
 }

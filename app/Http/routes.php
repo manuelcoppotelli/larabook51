@@ -33,3 +33,6 @@ Route::post('password/reset', ['as' => 'register_reset', 'uses' => 'Auth\Passwor
 // Statuses
 Route::get('/statuses', ['as' => 'statuses_path', 'uses' => 'StatusesController@index']);
 Route::post('/statuses', 'StatusesController@store');
+
+// Users
+Route::get('users', 'UsersController@index');
