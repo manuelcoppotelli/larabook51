@@ -9,20 +9,20 @@ use Illuminate\Contracts\Bus\SelfHandling;
 
 class RegisterUserJob extends Job implements SelfHandling
 {
-    private $name;
+    private $username;
     private $email;
     private $password;
 
     /**
      * Create a new job instance.
      *
-     * @param $name
+     * @param $username
      * @param $email
      * @param $password
      */
-    public function __construct($name, $email, $password)
+    public function __construct($username, $email, $password)
     {
-        $this->name = $name;
+        $this->username = $username;
         $this->email = $email;
         $this->password = $password;
     }
@@ -35,7 +35,7 @@ class RegisterUserJob extends Job implements SelfHandling
      */
     public function handle(UserRepository $repository)
     {
-        $user = User::register($this->name, $this->email, $this->password);
+        $user = User::register($this->username, $this->email, $this->password);
 
         $repository->save($user);
 

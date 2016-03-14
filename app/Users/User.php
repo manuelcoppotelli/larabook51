@@ -32,7 +32,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['username', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -69,9 +69,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      *
      * @return User
      */
-    public static function register($name, $email, $password)
+    public static function register($username, $email, $password)
     {
-
-        return new static(compact('name', 'email', 'password'));
+        return new static(compact('username', 'email', 'password'));
     }
 }

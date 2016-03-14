@@ -20,9 +20,9 @@
                 @if($currentUser)
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <img class="nav-gravatar" src="{{ $currentUser->present()->gravatar() }}" alt="{{ $currentUser->name }}"/>
+                            <img class="nav-gravatar" src="{{ $currentUser->present()->gravatar() }}" alt="{{ $currentUser->username }}"/>
 
-                            {{ $currentUser->name }} <span class="caret"></span>
+                            {{ $currentUser->username }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>

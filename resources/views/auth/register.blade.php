@@ -13,9 +13,9 @@
                     {!! Form::open(['route' => 'register_path', 'role' => 'form', 'class' => 'form-horizontal']) !!}
 
                         <div class="form-group">
-                            {!! Form::label('name', 'Name', ['class' => 'col-md-4 control-label']) !!}
+                            {!! Form::label('username', 'Username', ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                                {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                                {!! Form::text('username', null, ['class' => 'form-control']) !!}
                             </div>
                         </div>
 

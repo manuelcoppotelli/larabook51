@@ -91,9 +91,9 @@ class AuthController extends Controller
      */
     public function postRegister(RegistrationRequest $request)
     {
-        extract($request->only('name', 'email', 'password'));
+        extract($request->only('username', 'email', 'password'));
 
-        $user = $this->dispatch(new RegisterUserJob($name, $email, $password));
+        $user = $this->dispatch(new RegisterUserJob($username, $email, $password));
 
         Auth::login($user);
 
