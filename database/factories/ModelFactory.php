@@ -13,7 +13,7 @@
 
 $factory->define(Larabook\Users\User::class, function ($faker) {
     return [
-        'username' => $faker->name,
+        'username' => $faker->username,
         'email' => $faker->email,
         'password' => 'secret',
         'remember_token' => str_random(10),
