@@ -22,16 +22,14 @@
         "classmap": [
             "database"
         ],
-    "files": [
-        "app/helpers.php"
-    ],
         "psr-4": {
             "Larabook\\": "app/"
         }
     },
     "autoload-dev": {
         "classmap": [
-            "tests/TestCase.php"
+            "tests/TestCase.php",
+            "tests/_support"
         ]
     },
     "scripts": {
