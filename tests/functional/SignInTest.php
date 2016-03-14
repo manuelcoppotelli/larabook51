@@ -1,12 +1,8 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
-
 class SignInTest extends TestCase
 {
-    use DatabaseTransactions;
+    use FunctionalHelper;
 
     /**
      * A basic functional test example.
@@ -18,6 +14,7 @@ class SignInTest extends TestCase
         $this->signIn();
 
         $this->seePageIs('/statuses')
-             ->see('Welcome back!');
+             ->see('Welcome back!')
+             ->assertTrue(Auth::check());
     }
 }

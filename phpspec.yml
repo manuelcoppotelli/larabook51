@@ -1,5 +1,0 @@
-suites:
-    main:
-        namespace: Larabook
-        psr4_prefix: Larabook
-        src_path: app

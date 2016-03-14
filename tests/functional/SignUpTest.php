@@ -1,12 +1,8 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
-
 class SignUpTest extends TestCase
 {
-    use DatabaseTransactions;
+    use FunctionalHelper;
 
     /**
      * A basic functional test example.
@@ -22,7 +18,7 @@ class SignUpTest extends TestCase
              ->seePageIs('/register');
 
         $this->submitForm([
-            'name' => 'John Doe',
+            'username' => 'JohnDoe',
             'email' => 'johndoe@example.com',
             'password' => 'secret',
             'password_confirmation' => 'secret'
@@ -32,7 +28,7 @@ class SignUpTest extends TestCase
              ->see('Welcome to Larabook');
 
         $this->seeInDatabase('users', [
-            'name' => 'John Doe',
+            'username' => 'JohnDoe',
             'email' => 'johndoe@example.com'
         ]);
 

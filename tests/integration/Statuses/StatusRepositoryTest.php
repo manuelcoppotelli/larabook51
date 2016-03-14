@@ -1,13 +1,10 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Larabook\Statuses\StatusRepository;
 
 class StatusRepositoryTest extends TestCase
 {
-    use DatabaseTransactions;
+    use IntegrationHelper;
 
     protected $repo;
 

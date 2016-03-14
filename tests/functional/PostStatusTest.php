@@ -1,12 +1,8 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
-
 class PostStatusTest extends TestCase
 {
-    use DatabaseTransactions;
+    use FunctionalHelper;
 
     /**
      * A basic functional test example.
@@ -18,6 +14,7 @@ class PostStatusTest extends TestCase
         $this->signIn()
              ->visit('/statuses')
              ->postAStatus('My first post')
-             /*->see('My first post')*/;
+             ->seePageIs('/statuses')
+             ->see('My first post');
     }
 }
