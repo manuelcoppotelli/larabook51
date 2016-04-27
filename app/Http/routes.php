@@ -35,4 +35,10 @@ Route::get('/statuses', ['as' => 'statuses_path', 'uses' => 'StatusesController@
 Route::post('/statuses', 'StatusesController@store');
 
 // Users
-Route::get('users', 'UsersController@index');
+Route::get('users', [
+	'as' => 'users_path',
+	'uses' => 'UsersController@index']);
+
+Route::get('@{username}', [
+	'as' => 'profile_path',
+	'uses' => 'UsersController@show']);

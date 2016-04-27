@@ -53,7 +53,7 @@ class StatusesController extends Controller
 
         flash()->message('Your status has been updated!');
 
-        return redirect()->refresh();
+        return redirect()->back();
     }
 
     /**

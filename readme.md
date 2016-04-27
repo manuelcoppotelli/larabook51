@@ -117,3 +117,7 @@ So far, we've been manually creating records. Naturally, though, it makes sense 
 We need to offer some way for users to browse through all registered members of Larabook. That way, they can have the option of "following" any developers who post interesting statuses. Let's handle that in this lesson, while also implementing pagination.
 
 **Please note: Now you can set the testing environment variables in `phpunit.xml` file.**
+
+### 22. [Profiles](https://laracasts.com/series/build-a-laravel-app-from-scratch/episodes/22)
+
+In the previous episode, we managed to display all registered Larabook users; however, we stopped just short of offering a way to link to their respective profiles. Let's tackle that in this episode.

@@ -21,6 +21,17 @@ class UserRepository
      */
     public function getPaginated($howMany = 25)
     {
-        return User::paginate($howMany);
+        return User::orderBy('username', 'asc')->paginate($howMany);
+    }
+
+    /*
+     * Fetch a user by their username.
+     */
+    public function findByUsername($username)
+    {
+        return User::with(['statuses' => function($query)
+        {
+            $query->latest();
+        }])->whereUsername($username)->first() ;
     }
 }

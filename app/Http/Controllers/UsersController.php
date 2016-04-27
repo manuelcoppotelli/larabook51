@@ -29,4 +29,11 @@ class UsersController extends Controller
 
         return view('users.index')->withUsers($users);
     }
+
+    public function show($username)
+    {
+        $user = $this->userRepository->findByUsername($username);
+
+        return view('users.show')->withUser($user);
+    }
 }
