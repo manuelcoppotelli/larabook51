@@ -4,7 +4,8 @@ class ShowUsersTest extends TestCase
 {
     use FunctionalHelper;
 
-	public function testListAllRegistredUsers()
+    /** @test */
+	public function list_all_users_who_are_registered()
     {
         $this->haveAnAccount(['username' => 'Foo'])
         	 ->haveAnAccount(['username' => 'Bar'])

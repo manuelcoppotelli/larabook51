@@ -14,7 +14,8 @@ class StatusRepositoryTest extends TestCase
         $this->repo = new StatusRepository();
     }
 
-    public function testGetsAllStatusesForAUser()
+    /** @test */
+    public function it_gets_all_statuses_for_a_user()
     {
         $users = factory('Larabook\Users\User', 2)->create();
 
@@ -35,7 +36,8 @@ class StatusRepositoryTest extends TestCase
         $this->assertEquals('My status', $statusForUser[1]->body);
     }
 
-    public function testItSavesAStatusForAUser()
+    /** @test */
+    public function it_saves_a_status_for_a_user()
     {
         $status = Status::create(['body' => 'Another status']);
 

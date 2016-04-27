@@ -13,7 +13,8 @@ class UserRepositoryTest extends TestCase
         $this->repo = new UserRepository();
     }
 
-    public function testItPaginateAllUsers()
+    /** @test */
+    public function it_paginates_all_users()
     {
     	$users = factory('Larabook\Users\User', 4)->create();
 

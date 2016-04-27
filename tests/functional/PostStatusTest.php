@@ -4,12 +4,8 @@ class PostStatusTest extends TestCase
 {
     use FunctionalHelper;
 
-    /**
-     * A basic functional test example.
-     *
-     * @return void
-     */
-    public function testPostStatusesToMyProfile()
+    /** @test */
+    public function post_statuses_to_my_profile()
     {
         $this->signIn()
              ->visit('/statuses')

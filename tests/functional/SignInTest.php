@@ -4,12 +4,8 @@ class SignInTest extends TestCase
 {
     use FunctionalHelper;
 
-    /**
-     * A basic functional test example.
-     *
-     * @return void
-     */
-    public function testLogInToMyLarabookAccount()
+    /** @test */
+    public function login_to_my_larabook_account()
     {
         $this->signIn();
 
